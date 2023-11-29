@@ -26,21 +26,18 @@ public class HamiltonianComparison {
 
     // Benchmark method
     static void benchmark(String datasetName, int[][] graph) {
-        HamiltonianCycleBacktracking cycle = new HamiltonianCycleBacktracking();
-        HamiltonianPathDP path = new HamiltonianPathDP();
-
         // Measuring for Hamiltonian Cycle Backtracking
         long startTime = System.currentTimeMillis();
         long startMemory = getCurrentMemoryUsage();
-        cycle.hamCycle(graph);
+        HamiltonianPathBacktracking.hamPath(graph);
         long endMemory = getCurrentMemoryUsage();
         long endTime = System.currentTimeMillis();
-        System.out.println("Hamiltonian Cycle (" + datasetName + "): Time = " + (endTime - startTime) + "ms, Memory = " + (endMemory - startMemory) + " bytes");
+        System.out.println("Hamiltonian Path Backtracking (" + datasetName + "): Time = " + (endTime - startTime) + "ms, Memory = " + (endMemory - startMemory) + " bytes");
 
         // Measuring for Hamiltonian Path DP
         startTime = System.currentTimeMillis();
         startMemory = getCurrentMemoryUsage();
-        path.Hamiltonian_path(graph, graph.length);
+        HamiltonianPathDP.Hamiltonian_path(graph, graph.length);
         endMemory = getCurrentMemoryUsage();
         endTime = System.currentTimeMillis();
         System.out.println("Hamiltonian Path DP (" + datasetName + "): Time = " + (endTime - startTime) + "ms, Memory = " + (endMemory - startMemory) + " bytes");

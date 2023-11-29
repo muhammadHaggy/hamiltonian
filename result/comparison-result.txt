@@ -1,11 +1,6 @@
-Solution does not exist
-Hamiltonian Cycle (Small): Time = 0ms, Memory = 0 bytes
-Hamiltonian Path DP (Small): Time = 33ms, Memory = 1048832 bytes
-
-Solution does not exist
-Hamiltonian Cycle (Medium): Time = 0ms, Memory = 0 bytes
-Hamiltonian Path DP (Medium): Time = 146ms, Memory = 5848736 bytes
-Solution Exists: Following is one Hamiltonian Cycle
- 0  1  4  3  2  0
-Hamiltonian Cycle (Large): Time = 2ms, Memory = 262096 bytes
-Hamiltonian Path DP (Large): Time = 610ms, Memory = 41943040 bytes
+Hamiltonian Path Backtracking (Small): Time = 0ms, Memory = 0 bytes
+Hamiltonian Path DP (Small): Time = 31ms, Memory = 1048832 bytes
+Hamiltonian Path Backtracking (Medium): Time = 0ms, Memory = 0 bytes
+Hamiltonian Path DP (Medium): Time = 142ms, Memory = 5848744 bytes
+Hamiltonian Path Backtracking (Large): Time = 0ms, Memory = 0 bytes
+Hamiltonian Path DP (Large): Time = 616ms, Memory = 41943040 bytes
