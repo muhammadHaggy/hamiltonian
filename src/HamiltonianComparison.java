@@ -29,7 +29,8 @@ public class HamiltonianComparison {
         // Measuring for Hamiltonian Cycle Backtracking
         long startTime = System.currentTimeMillis();
         long startMemory = getCurrentMemoryUsage();
-        HamiltonianPathBacktracking.hamPath(graph);
+//        HamiltonianPathBacktracking.hamPath(graph);
+        HamiltonianPathBacktracking.checkUsingDfs(graph, graph.length);
         long endMemory = getCurrentMemoryUsage();
         long endTime = System.currentTimeMillis();
         System.out.println("Hamiltonian Path Backtracking (" + datasetName + "): Time = " + (endTime - startTime) + "ms, Memory = " + (endMemory - startMemory) + " bytes");
@@ -50,9 +51,9 @@ public class HamiltonianComparison {
 
     // Main method
     public static void main(String[] args) {
-        int[][] smallGraph = readDataset("datasets/hamiltonian_16.txt", 16);
-        int[][] mediumGraph = readDataset("datasets/hamiltonian_18.txt", 18);
-        int[][] largeGraph = readDataset("datasets/hamiltonian_20.txt", 20);
+        int[][] smallGraph = readDataset("datasets/small_graph_edgelist.txt", 16);
+        int[][] mediumGraph = readDataset("datasets/medium_graph_edgelist.txt", 18);
+        int[][] largeGraph = readDataset("datasets/large_graph_edgelist.txt", 20);
 
         // Benchmark for each dataset
         benchmark("Small", smallGraph);

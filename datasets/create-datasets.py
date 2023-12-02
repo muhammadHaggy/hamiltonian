@@ -1,50 +1,27 @@
-import os
 import networkx as nx
-import random
 
-def generate_hamiltonian_path_graph(vertices):
-    """
-    Generates a graph with a guaranteed Hamiltonian path.
-    """
-    # Create a path graph which is a trivially Hamiltonian
-    H = nx.path_graph(vertices)
+def generate_and_save_graph(n, m, filename, seed=20160):
+    # Create a random graph
+    G = nx.gnm_random_graph(n, m, seed=seed)
 
-    # Add additional edges to make the graph more complex
-    # while still maintaining the Hamiltonian path
-    additional_edges = vertices * 2  # Number of additional edges
-    for _ in range(additional_edges):
-        v1, v2 = random.sample(range(vertices), 2)
-        if not H.has_edge(v1, v2):
-            H.add_edge(v1, v2)
+    # some properties
+    print(f"Graph with {n} nodes and {m} edges")
+    print("node degree clustering")
+    for v in nx.nodes(G):
+        print(f"{v} {nx.degree(G, v)} {nx.clustering(G, v)}")
 
-    return H
+    print("\nThe edge list")
+    # Write edge list to a file
+    with open(filename, 'wb') as file:  # Notice 'wb' instead of 'w'
+        nx.write_edgelist(G, file, data=False)
+        for line in nx.generate_edgelist(G, data=False):
+            print(line)
 
-def save_graph_to_file(graph, file_name):
-    """
-    Saves the graph in edge list format to a file.
-    """
-    nx.write_edgelist(graph, file_name, data=False)
+# Parameters for small, medium, and large datasets
+params = [(16, 20, "small_graph_edgelist.txt"),
+          (18, 26, "medium_graph_edgelist.txt"),
+          (20, 35, "large_graph_edgelist.txt")]
 
-# Filenames for the datasets
-file_names = {
-    "small": "hamiltonian_16.txt",
-    "medium": "hamiltonian_18.txt",
-    "large": "hamiltonian_20.txt"
-}
-
-# Vertex counts for each dataset
-vertex_counts = {
-    "small": 16,
-    "medium": 18,
-    "large": 20
-}
-
-# Generate and save the datasets
-for size, file_name in file_names.items():
-    if not os.path.exists(file_name):
-        vertices = vertex_counts[size]
-        graph = generate_hamiltonian_path_graph(vertices)
-        save_graph_to_file(graph, file_name)
-        print(f"Generated and saved {size} dataset: {file_name}")
-    else:
-        print(f"File {file_name} already exists. Skipping generation.")
+# Generate and save graphs
+for n, m, filename in params:
+    generate_and_save_graph(n, m, filename)
