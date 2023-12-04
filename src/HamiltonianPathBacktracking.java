@@ -19,7 +19,7 @@ public class HamiltonianPathBacktracking {
         long endMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         long endTime = System.currentTimeMillis();
 
-        System.out.println("Current memory usage: " + (endMemory / 1024 / 1024) + " MB");
+        System.out.println("Current memory usage: " + (endMemory - startMemory) + " bytes");
         System.out.println("Running Time: " + (endTime - startTime) + " milliseconds");
     }
 
