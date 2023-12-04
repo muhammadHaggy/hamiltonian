@@ -1,6 +1,6 @@
-Hamiltonian Path Backtracking (Small): Time = 1ms, Memory = 0 bytes
-Hamiltonian Path DP (Small): Time = 33ms, Memory = 720944 bytes
-Hamiltonian Path Backtracking (Medium): Time = 7ms, Memory = 0 bytes
-Hamiltonian Path DP (Medium): Time = 146ms, Memory = 5610480 bytes
-Hamiltonian Path Backtracking (Large): Time = 35ms, Memory = 0 bytes
-Hamiltonian Path DP (Large): Time = 651ms, Memory = 41943040 bytes
+Hamiltonian Path Backtracking (Small): Time = 3ms, Memory = 0 bytes
+Hamiltonian Path DP (Small): Time = 51ms, Memory = 720944 bytes
+Hamiltonian Path Backtracking (Medium): Time = 4ms, Memory = 0 bytes
+Hamiltonian Path DP (Medium): Time = 208ms, Memory = 5610472 bytes
+Hamiltonian Path Backtracking (Large): Time = 117ms, Memory = 0 bytes
+Hamiltonian Path DP (Large): Time = 909ms, Memory = 41943040 bytes

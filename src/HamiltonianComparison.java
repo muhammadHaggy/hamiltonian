@@ -29,8 +29,7 @@ public class HamiltonianComparison {
         // Measuring for Hamiltonian Cycle Backtracking
         long startTime = System.currentTimeMillis();
         long startMemory = getCurrentMemoryUsage();
-//        HamiltonianPathBacktracking.hamPath(graph);
-        HamiltonianPathBacktracking.checkUsingDfs(graph, graph.length);
+        HamiltonianPathBacktracking.hamPath(graph);
         long endMemory = getCurrentMemoryUsage();
         long endTime = System.currentTimeMillis();
         System.out.println("Hamiltonian Path Backtracking (" + datasetName + "): Time = " + (endTime - startTime) + "ms, Memory = " + (endMemory - startMemory) + " bytes");
